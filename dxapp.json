@@ -1,0 +1,70 @@
+{
+  "name": "polyedge_v1.0.0",
+  "title": "polyedge_v1.0.0",
+  "summary": "v1.0.0 - MSH2 polyedge.",
+  "properties": {
+    "github release": "v1.0.0"
+  },
+  "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "BAM",
+      "label": "BAM",
+      "help": "The BAM file",
+      "class": "file",
+      "patterns": ["*.BAM"],
+      "optional": true
+    },
+    {
+      "name": "BAI",
+      "label": "BAI",
+      "help": "The BAM index file",
+      "class": "file",
+      "patterns": ["*.bai"],
+      "optional": true
+    },
+    {
+      "name": "skip",
+      "label": "skip",
+      "help": "Skip this step if not required",
+      "class": "boolean",
+      "optional": false,
+      "default": true
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "polyedge_output",
+      "label": "polyedge output",
+      "help": "polyedge output file.",
+      "class": "array:file",
+      "optional": true
+    }
+  ],
+  "runSpec": {
+    "interpreter": "bash",
+    "distribution": "Ubuntu",
+    "release": "20.04",
+    "version": "0",
+    "file": "src/code.sh",
+    "execDepends": [
+  ]
+},
+  "access": {
+    "network": [
+      "*"
+    ],
+    "project": "CONTRIBUTE",
+    "allProjects": "VIEW"
+  },
+  "ignoreReuse": false,
+  "regionalOptions": {
+    "aws:us-east-1": {
+      "systemRequirements": {
+        "main": {
+          "instanceType": "mem1_ssd1_v2_x2"
+        }
+      }
+    }
+  }
+}
