@@ -12,7 +12,7 @@
       "label": "BAM",
       "help": "The BAM file",
       "class": "file",
-      "patterns": ["*.BAM"],
+      "patterns": ["*.bam"],
       "optional": true
     },
     {
