@@ -12,7 +12,7 @@
       "label": "BAM",
       "help": "The BAM file",
       "class": "file",
-      "patterns": ["*.bam"],
+      "patterns": ["*.bam$"],
       "optional": true
     },
     {
@@ -46,16 +46,14 @@
     "distribution": "Ubuntu",
     "release": "20.04",
     "version": "0",
-    "file": "src/code.sh",
-    "execDepends": [
-  ]
-},
+    "file": "src/code.sh"
+  },
   "access": {
     "network": [
       "*"
     ],
     "project": "CONTRIBUTE",
-    "allProjects": "VIEW"
+    "allProjects": "CONTRIBUTE"
   },
   "ignoreReuse": false,
   "regionalOptions": {
