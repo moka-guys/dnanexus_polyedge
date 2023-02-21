@@ -72,6 +72,7 @@
       "label": "anchor_length",
       "help": "Length of anchor sequence (Default is 2. It is *NOT* recommended to change this from the default)",
       "class": "int",
+      "default": 2,
       "patterns": [
         "*"
       ],

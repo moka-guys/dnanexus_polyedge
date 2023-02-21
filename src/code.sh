@@ -22,7 +22,7 @@ function main() {
   		docker_imagename=$(tar xfO "${docker_filename}" manifest.json --force-local | sed -E 's/.*"RepoTags":\["?([^"]*)"?.*/\1/')
     	docker load < "${docker_filename}"  # Load docker image
       sudo docker images
-    	docker run -v /data/:/data/ -v ${output_location}:/outputs/ "${docker_imagename}" -B /data/${BAM_name} -I /data/${BAI_name} -G ${gene} -S ${poly_start} -E ${poly_end} -C ${chrom}      
+    	docker run -v /data/:/data/ -v ${output_location}:/outputs/ "${docker_imagename}" -B /data/${BAM_name} -I /data/${BAI_name} -G ${gene} -S ${poly_start} -E ${poly_end} -C ${chrom} -A ${anchor_length}
       
       # Move outputs into their respective output folders to delocalise into the dnanexus project
       mv ${output_location}/*.csv ${csv_out}
