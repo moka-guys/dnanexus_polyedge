@@ -6,7 +6,7 @@ This provides a solution to the alignment issues caused by poly repeat stretches
 
 ## How does this app work?
 
-If `skip` is `true` the app closes without downloading any inputs. This allows us to embed the app in a generic workflow that would run samples where MSH2 is not a gene of interest.
+If `skip` is `true` the app closes without downloading any inputs. This allows us to embed the app in a generic workflow that does not require the polyedge app.
 
 Otherwise, the app downloads the polyedge dockerfile from 001_ToolsReferenceData, and the input files, runs the docker, and captures the stdout into the output file.
 
