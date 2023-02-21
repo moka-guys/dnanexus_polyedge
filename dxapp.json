@@ -1,26 +1,80 @@
 {
-  "name": "polyedge_v1.0.0",
-  "title": "polyedge_v1.0.0",
-  "summary": "v1.0.0 - MSH2 polyedge.",
+  "name": "polyedge_v1.1.0",
+  "title": "polyedge_v1.1.0",
+  "summary": "v1.1.0 polyedge.",
   "properties": {
-    "github release": "v1.0.0"
+    "github release": "v1.1.0"
   },
   "dxapi": "1.0.0",
   "inputSpec": [
     {
       "name": "BAM",
       "label": "BAM",
-      "help": "The BAM file",
+      "help": "BAM file",
       "class": "file",
-      "patterns": ["*.bam$"],
+      "patterns": [
+        "*.bam$"
+      ],
       "optional": true
     },
     {
       "name": "BAI",
       "label": "BAI",
-      "help": "The BAM index file",
+      "help": "BAM index file",
       "class": "file",
-      "patterns": ["*.bai"],
+      "patterns": [
+        "*.bai"
+      ],
+      "optional": true
+    },
+    {
+      "name": "gene",
+      "label": "gene",
+      "help": "Gene of interest",
+      "class": "string",
+      "patterns": [
+        "*"
+      ],
+      "optional": true
+    },
+    {
+      "name": "poly_start",
+      "label": "poly_start",
+      "help": "Start position of poly stretch (0-based). N.b. the script is currently only functional for variants at the 5' end of a poly stretch",
+      "class": "int",
+      "patterns": [
+        "*"
+      ],
+      "optional": true
+    },
+    {
+      "name": "poly_end",
+      "label": "poly_end",
+      "help": "End position of poly stretch (0-based). N.b. the script is currently only functional for variants at the 5' end of a poly stretch",
+      "class": "int",
+      "patterns": [
+        "*"
+      ],
+      "optional": true
+    },
+    {
+      "name": "chrom",
+      "label": "chrom",
+      "help": "Chromosome of interest",
+      "class": "int",
+      "patterns": [
+        "*"
+      ],
+      "optional": true
+    },
+    {
+      "name": "anchor_length",
+      "label": "anchor_length",
+      "help": "Length of anchor sequence (Default is 2. It is *NOT* recommended to change this from the default)",
+      "class": "int",
+      "patterns": [
+        "*"
+      ],
       "optional": true
     },
     {
@@ -34,10 +88,24 @@
   ],
   "outputSpec": [
     {
-      "name": "polyedge_output",
-      "label": "polyedge output",
-      "help": "polyedge output file.",
-      "class": "array:file",
+      "name": "polyedge_csv",
+      "label": "polyedge_csv",
+      "help": "CSV output with per-allele metrics",
+      "class": "file",
+      "optional": true
+    },
+    {
+      "name": "polyedge_html",
+      "label": "polyedge_html",
+      "help": "HTML output with per-allele metrics",
+      "class": "file",
+      "optional": true
+    },
+    {
+      "name": "polyedge_pdf",
+      "label": "polyedge_pdf",
+      "help": "PDF output with per-allele metrics",
+      "class": "file",
       "optional": true
     }
   ],
